@@ -1,5 +1,5 @@
 # Code Generation: 100% written by Google Gemini.
-본문/(부)제목들의 텍스트를 제외한 모든 코드는 Google Gemini를 사용하여 제작되었습니다.
+본문과 (부)제목들의 텍스트를 제외한 모든 코드는 Google Gemini를 사용하여 제작되었습니다.
 
 # Semi-asceticism (준고행) 
 An interactive web map project documenting a 16.5km walk and the philosophical, sometimes pedantic, stream of consciousness that occurred along the way. Submitted as an assignment for a University Humanities class.
