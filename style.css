@@ -1,0 +1,116 @@
+/* 기본 여백 제거 및 폰트 설정 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    height: 100vh;
+    font-family: 'Malgun Gothic', sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* 왼쪽 사이드바 (목차 영역) */
+.sidebar {
+    width: 350px;
+    background: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    z-index: 1000; /* 지도보다 위로 올라오게 설정 */
+}
+.title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+/* 목차 리스트 스타일 */
+#toc-list {
+    list-style: none;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+#toc-list li {
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+#toc-list li:hover, 
+#toc-list li.active {
+    background: #e2e6ea;
+    border-color: #adb5bd;
+    font-weight: bold;
+}
+
+/* 하단 버튼 스타일 */
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+.controls button {
+    flex: 1;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background: #4A5568;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+.controls button:hover {
+    background: #2D3748;
+}
+
+/* 오른쪽 지도 영역 */
+#map {
+    flex-grow: 1;
+    height: 100%;
+}
+
+/* style.css 파일 아래쪽 */
+/* Leaflet 기본 팝업 설정 강제 덮어쓰기 (크기 및 스크롤) */
+.leaflet-popup-content {
+    width: 400px !important; /* 팝업 너비를 적절히 조정 (왼쪽 목차는 가리지 않음) */
+    max-height: 70vh !important; /* 화면 높이의 70%까지만 커지고 그 이상은 스크롤 생성 */
+    overflow-y: auto !important; /* 세로 스크롤 활성화 */
+    font-size: 1rem;
+    padding-right: 10px; /* 스크롤바 공간 확보 */
+}
+
+/* 스크롤바 예쁘게 다듬기 */
+.leaflet-popup-content::-webkit-scrollbar {
+    width: 8px;
+}
+.leaflet-popup-content::-webkit-scrollbar-thumb {
+    background-color: #adb5bd;
+    border-radius: 4px;
+}
+
+/* 내부 텍스트 및 이미지 디자인 */
+.popup-content img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.popup-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #2c3e50;
+}
+.popup-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #444;
+    white-space: pre-line; /* \n 줄바꿈 정상 인식 */
+}
